@@ -1,6 +1,20 @@
 # ExLoader
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Platform](https://img.shields.io/badge/platform-Windows-blue.svg)](https://www.microsoft.com/windows)
+[![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](.github/workflows/build.yml)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 ExLoader is a Windows‑centric instrumentation toolkit. The injector (`exloader.exe`) launches or attaches to any target process, injects a modular hook runtime (`libexadapter_core.dll`), and streams every captured event as JSON Lines. The runtime focuses on network, crypto, filesystem, string, and math APIs so that analysts can reconstruct a target application's behaviour without patching its binaries.
+
+## ✨ Features
+
+- 🎯 **Zero-Binary Modification**: Hook runtime APIs without patching executables
+- 📡 **Comprehensive Coverage**: Network (WinHTTP/WinInet/Winsock), Crypto (BCrypt/CryptoAPI), Filesystem, Strings, Math
+- 📊 **Structured Logging**: All events streamed as JSON Lines with caller context
+- 🔌 **Modular Architecture**: Enable/disable hook modules via JSON profiles
+- 🎮 **Live Demo**: Interactive GUI CrackMe showcasing all instrumentation capabilities
+- 🚀 **32-bit Focus**: Optimized for legacy application analysis
 
 ## Repository Layout
 
