@@ -157,6 +157,11 @@ Add a `.gitignore` entry if you create new build directories.
 * `Plugin failed to initialize: mathmon` – ensure `msvcrt.dll` is available (MinGW32 builds expect it). The module now treats float hooks as optional but fails if mandatory functions cannot be hooked.
 * JSON crashes with `[json.exception.type_error.316]` – upgrade to the latest runtime; string payloads are hex‑encoded to avoid invalid UTF‑8.
 
-## Roadmap
+## Contributing
 
-See `ROADMAP.md` and `TODO.md` for upcoming work (Frida gadget bridge, x64 runtime, advanced filters, etc.). Contributions and bug reports are welcome—open an issue or start a discussion.
+Contributions and bug reports are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+- 🐛 Found a bug? [Open an issue](https://github.com/VenoMexx/ExLoader/issues/new?template=bug_report.md)
+- 💡 Have a feature idea? [Request a feature](https://github.com/VenoMexx/ExLoader/issues/new?template=feature_request.md)
+- 🤝 Want to contribute? Check out our [contribution guidelines](CONTRIBUTING.md)
+- 💬 Questions or discussions? [Start a discussion](https://github.com/VenoMexx/ExLoader/discussions)
