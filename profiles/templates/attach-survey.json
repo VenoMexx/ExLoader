@@ -1,0 +1,41 @@
+{
+  "$schema": "../schema.json",
+  "name": "attach-survey",
+  "logging": {
+    "path": "logs/attach-survey.jsonl",
+    "stdout": true,
+    "max_bytes_per_entry": 49152
+  },
+  "target": {
+    "launch": "",
+    "arguments": "",
+    "working_directory": ""
+  },
+  "modules": [
+    {
+      "name": "network.winhttp",
+      "enabled": true,
+      "allow_in_attach": true
+    },
+    {
+      "name": "network.wininet",
+      "enabled": true,
+      "allow_in_attach": true
+    },
+    {
+      "name": "network.winsock",
+      "enabled": true,
+      "allow_in_attach": true
+    },
+    {
+      "name": "network.proxy",
+      "enabled": true,
+      "allow_in_attach": true
+    },
+    {
+      "name": "crypto.bcrypt",
+      "enabled": false,
+      "allow_in_attach": false
+    }
+  ]
+}

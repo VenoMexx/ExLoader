@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://exloader.local/schema/profile.json",
+  "title": "ExLoader Profile",
+  "type": "object",
+  "required": ["name", "logging", "target", "modules"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "logging": {
+      "type": "object",
+      "required": ["path"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "stdout": { "type": "boolean" },
+        "max_bytes_per_entry": { "type": "integer", "minimum": 1024 }
+      },
+      "additionalProperties": false
+    },
+    "target": {
+      "type": "object",
+      "properties": {
+        "launch": { "type": "string" },
+        "arguments": { "type": "string" },
+        "working_directory": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "modules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          { "type": "string", "minLength": 1 },
+          {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "enabled": { "type": "boolean" },
+              "allow_in_attach": { "type": "boolean" }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}

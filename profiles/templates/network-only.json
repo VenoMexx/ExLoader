@@ -1,0 +1,21 @@
+{
+  "$schema": "../schema.json",
+  "name": "network-only",
+  "logging": {
+    "path": "logs/network-only.jsonl",
+    "stdout": true,
+    "max_bytes_per_entry": 16384
+  },
+  "target": {
+    "launch": "C:/Path/To/NetTarget.exe",
+    "arguments": "",
+    "working_directory": "C:/Path/To"
+  },
+  "modules": [
+    "network.winhttp",
+    "network.winhttp.extended",
+    "network.urlmon",
+    "network.wininet",
+    "network.winsock"
+  ]
+}

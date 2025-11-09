@@ -1,0 +1,18 @@
+{
+  "$schema": "../schema.json",
+  "name": "crypto-only",
+  "logging": {
+    "path": "logs/crypto-only.jsonl",
+    "stdout": true,
+    "max_bytes_per_entry": 65535
+  },
+  "target": {
+    "launch": "C:/Path/To/CryptoTarget.exe",
+    "arguments": "",
+    "working_directory": "C:/Path/To"
+  },
+  "modules": [
+    "crypto.bcrypt",
+    "crypto.cryptapi"
+  ]
+}

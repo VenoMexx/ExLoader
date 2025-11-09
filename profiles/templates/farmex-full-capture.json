@@ -1,0 +1,39 @@
+{
+  "$schema": "../schema.json",
+  "name": "afkbot-full-capture",
+  "logging": {
+    "path": "logs/afkbot-full.jsonl",
+    "stdout": true,
+    "max_bytes_per_entry": 131072
+  },
+  "target": {
+    "launch": "D:/Projeler/ExLoader/build-mingw/examples/test_target_build/test_target.exe",
+    "arguments": "",
+    "working_directory": "D:/Projeler/ExLoader/build-mingw/examples/test_target_build"
+  },
+  "modules": [
+    "network.winhttp",
+    "network.winhttp.extended",
+    "network.wininet",
+    "network.winsock",
+    "network.urlmon",
+    "network.win32web",
+    "network.http_sys",
+    "network.proxy",
+    "network.libcurl",
+    {
+      "name": "network.schannel",
+      "enabled": true,
+      "allow_in_attach": true
+    },
+    {
+      "name": "filesystem.filemon",
+      "enabled": true,
+      "allow_in_attach": true
+    },
+    "crypto.bcrypt",
+    "crypto.cryptapi",
+    "stringmon",
+    "mathmon"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "../schema.json",
+  "name": "proxy-audit",
+  "logging": {
+    "path": "logs/proxy-audit.jsonl",
+    "stdout": true,
+    "max_bytes_per_entry": 32768
+  },
+  "target": {
+    "launch": "C:/Apps/Browser.exe",
+    "arguments": "--safe-mode",
+    "working_directory": "C:/Apps"
+  },
+  "modules": [
+    "network.proxy",
+    "network.wininet",
+    "network.winhttp",
+    "network.winhttp.extended",
+    "network.libcurl",
+    "network.urlmon"
+  ]
+}

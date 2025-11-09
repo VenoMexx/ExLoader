@@ -1,0 +1,23 @@
+{
+  "$schema": "../profiles/schema.json",
+  "name": "dev-default",
+  "logging": {
+    "path": "logs/dev-session.jsonl",
+    "stdout": true,
+    "max_bytes_per_entry": 65535
+  },
+  "target": {
+    "launch": "C:/Games/client.exe",
+    "arguments": "--play",
+    "working_directory": "C:/Games"
+  },
+  "modules": [
+    "network.winhttp",
+    "network.winsock",
+    {
+      "name": "crypto.bcrypt",
+      "enabled": true,
+      "allow_in_attach": false
+    }
+  ]
+}

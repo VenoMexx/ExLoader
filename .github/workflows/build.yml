@@ -1,0 +1,43 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  msvc:
+    name: MSVC x64
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure (MSVC)
+        run: >-
+          cmake -S . -B build-msvc -G "Visual Studio 17 2022"
+          -A x64 -DCMAKE_BUILD_TYPE=Release
+      - name: Build (MSVC)
+        run: cmake --build build-msvc --config Release
+      - name: Test (MSVC)
+        run: ctest --test-dir build-msvc --output-on-failure -C Release
+
+  mingw:
+    name: MinGW x64
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          install: >-
+            git
+            mingw-w64-x86_64-cmake
+            mingw-w64-x86_64-gcc
+      - name: Configure (MinGW)
+        run: cmake -S . -B build-mingw -G "MinGW Makefiles"
+      - name: Build (MinGW)
+        run: cmake --build build-mingw
+      - name: Test (MinGW)
+        run: ctest --test-dir build-mingw --output-on-failure

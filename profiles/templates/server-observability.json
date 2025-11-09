@@ -1,0 +1,26 @@
+{
+  "$schema": "../schema.json",
+  "name": "server-observability",
+  "logging": {
+    "path": "logs/server-observability.jsonl",
+    "stdout": false,
+    "max_bytes_per_entry": 65535
+  },
+  "target": {
+    "launch": "C:/Services/WebHost.exe",
+    "arguments": "--run-service",
+    "working_directory": "C:/Services"
+  },
+  "modules": [
+    "network.http_sys",
+    "network.win32web",
+    "network.winhttp",
+    "network.winhttp.extended",
+    {
+      "name": "network.schannel",
+      "enabled": true,
+      "allow_in_attach": true
+    },
+    "network.winsock"
+  ]
+}

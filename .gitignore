@@ -1,0 +1,35 @@
+# Build outputs
+build-mingw/
+build-mingw32/
+**/build/
+
+# Logs and traces
+logs/
+*.log
+
+# Generated binaries
+*.exe
+*.dll
+*.pdb
+*.obj
+*.a
+*.lib
+
+# CMake artifacts
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+**/CMakeCache.txt
+**/CMakeFiles/
+**/cmake_install.cmake
+**/Makefile
+**/CTestTestfile.cmake
+**/cmake-build*/
+
+# Tool-specific
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

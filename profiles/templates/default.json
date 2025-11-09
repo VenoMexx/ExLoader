@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema.json",
+  "name": "default",
+  "logging": {
+    "path": "logs/session_%Y%m%d-%H%M%S.jsonl",
+    "stdout": true,
+    "max_bytes_per_entry": 32768
+  },
+  "target": {
+    "launch": "C:/Path/To/Target.exe",
+    "arguments": "--example",
+    "working_directory": "C:/Path/To"
+  },
+  "modules": [
+    "network.winhttp",
+    "network.winhttp.extended",
+    "network.wininet",
+    "network.winsock",
+    "network.urlmon",
+    "network.win32web",
+    "crypto.bcrypt",
+    "crypto.cryptapi"
+  ]
+}

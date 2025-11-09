@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema.json",
+  "name": "game-reverse",
+  "logging": {
+    "path": "logs/game-reverse.jsonl",
+    "stdout": true,
+    "max_bytes_per_entry": 65535
+  },
+  "target": {
+    "launch": "C:/Games/GameClient.exe",
+    "arguments": "--mode reverse",
+    "working_directory": "C:/Games"
+  },
+  "modules": [
+    "network.winhttp",
+    "network.winhttp.extended",
+    "network.winsock",
+    {
+      "name": "crypto.bcrypt",
+      "enabled": true,
+      "allow_in_attach": false
+    }
+  ]
+}
