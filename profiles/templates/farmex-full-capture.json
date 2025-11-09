@@ -7,9 +7,9 @@
     "max_bytes_per_entry": 131072
   },
   "target": {
-    "launch": "D:/Projeler/ExLoader/build-mingw/examples/test_target_build/test_target.exe",
+    "launch": "build-mingw32/examples/test_target_build/test_target.exe",
     "arguments": "",
-    "working_directory": "D:/Projeler/ExLoader/build-mingw/examples/test_target_build"
+    "working_directory": "build-mingw32/examples/test_target_build"
   },
   "modules": [
     "network.winhttp",

@@ -88,7 +88,7 @@ cmake --build build-msvc --config Release
 The fastest way to see ExLoader in action is to run the bundled test target:
 
 ```powershell
-cd D:\Projeler\ExLoader
+# From the repository root
 build-mingw32\exloader.exe ^
   --profile profiles\templates\farmex-full-capture.json ^
   --log logs\afkbot-full.jsonl
@@ -119,7 +119,7 @@ Profiles are JSON documents validated by `profiles/schema.json`. Important secti
   ```
 * **Filesystem Attribute Query:**
   ```json
-  {"type":"filesystem.filemon","operation":"get_attributes","path":"D:\\Projeler\\...\\test_target.licence.dat","success":false}
+  {"type":"filesystem.filemon","operation":"get_attributes","path":"C:\\path\\to\\test_target.licence.dat","success":true}
   ```
 * **String Conversion:**
   ```json
